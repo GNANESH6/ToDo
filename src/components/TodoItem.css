@@ -1,0 +1,145 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--ds-green); /* Demon Slayer Green Edge */
+  border-radius: 4px; /* Sharper edges */
+  margin-bottom: 0.8rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: slideInRight 0.4s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-item:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateX(8px) scale(1.02);
+  border-left-color: var(--jk-purple);
+  border-color: rgba(147, 51, 234, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(147, 51, 234, 0.2);
+}
+
+.todo-item.completed {
+  opacity: 0.5;
+  border-left-color: var(--dn-red);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: none;
+  color: var(--dn-red);
+  position: relative;
+}
+
+/* Demon Slayer slash through text */
+.todo-item.completed .todo-text::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--dn-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: slashEffect 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  box-shadow: 0 0 10px var(--dn-red);
+}
+
+@keyframes slashEffect {
+  to { transform: scaleX(1); }
+}
+
+.todo-text {
+  flex: 1;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  word-break: break-all;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Custom Checkbox (Naruto Shuriken vibe) */
+.checkbox-container {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: rgba(0,0,0,0.5);
+  border: 2px solid var(--text-secondary);
+  border-radius: 50%; /* Make it round like a target/shuriken */
+  transition: all 0.2s ease;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  border-color: var(--jk-purple);
+  box-shadow: 0 0 10px var(--jk-purple);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--dn-red);
+  border-color: var(--dn-red);
+  box-shadow: 0 0 15px var(--dn-red);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.delete-btn {
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.todo-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.delete-btn:hover {
+  color: white;
+  background: var(--dn-red);
+  box-shadow: 0 0 15px var(--dn-red);
+  transform: scale(1.1) rotate(10deg);
+}

@@ -1,0 +1,45 @@
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Custom Scrollbar (One Piece Gold) */
+.todo-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.5); /* One Piece Gold */
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.8);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-secondary);
+  animation: fadeIn 0.8s ease-out forwards;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1px dashed var(--dn-red);
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  font-family: 'Creepster', cursive;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+}

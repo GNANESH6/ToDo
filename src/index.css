@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Pirata+One&family=Rampart+One&family=Shojumaru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+  --bg-dark: #09090b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  /* Anime Colors */
+  --dn-red: #dc2626; /* Death Note Red */
+  --jk-purple: #9333ea; /* JJK Hollow Purple */
+  --nrt-orange: #f97316; /* Naruto Orange */
+  --ds-green: #10b981; /* Demon Slayer Tanjiro Green */
+  --sl-blue: #3b82f6; /* Solo Leveling Arise Blue */
+  --op-gold: #fbbf24; /* One Piece Gold */
+  --aot-brown: #78350f; /* AOT Jacket Brown */
+  
+  --glass-bg: rgba(15, 15, 15, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glow-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #09090b 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid var(--dn-red); /* Death Note border wrapper */
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.3), inset 0 0 20px rgba(0,0,0,0.8);
+  animation: domainExpansion 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  position: relative;
+}
+
+.glass-panel::before {
+  content: "DOMAIN EXPANSION"; /* JJK Reference */
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-dark);
+  color: var(--jk-purple);
+  padding: 0 15px;
+  font-family: 'Shojumaru', cursive;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px var(--jk-purple);
+  border: 1px solid var(--jk-purple);
+  border-radius: 4px;
+}
+
+h1.title {
+  text-align: center;
+  font-family: 'Creepster', cursive; /* Death Note vibe */
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  text-shadow: 3px 3px 0px var(--dn-red), -2px -2px 10px var(--jk-purple);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* Animations */
+@keyframes domainExpansion {
+  from { opacity: 0; transform: scale(0.8) translateY(50px); filter: brightness(0); }
+  to { opacity: 1; transform: scale(1) translateY(0); filter: brightness(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Background Anime Elements */
+.bg-shape {
+  position: fixed;
+  z-index: 0;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Solo Leveling Arise Aura */
+.sl-aura {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 50vh;
+  background: linear-gradient(to top, var(--sl-blue), transparent);
+  filter: blur(40px);
+  animation: pulseAura 4s infinite alternate;
+}
+
+/* AOT Wall / Titan Steam */
+.aot-steam {
+  top: 0;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200,200,200,0.8) 0%, transparent 70%);
+  filter: blur(60px);
+  animation: floatSteam 15s infinite linear;
+}
+
+/* Naruto Rasengan / Chakra */
+.nrt-chakra {
+  top: 20%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--nrt-orange) 0%, transparent 60%);
+  filter: blur(50px);
+  animation: spinChakra 8s infinite linear;
+}
+
+@keyframes pulseAura {
+  0% { opacity: 0.1; height: 40vh; }
+  100% { opacity: 0.25; height: 60vh; }
+}
+@keyframes floatSteam {
+  0% { transform: translateY(100px) scale(1) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.2; }
+  100% { transform: translateY(-200px) scale(1.5) rotate(45deg); opacity: 0; }
+}
+@keyframes spinChakra {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  to { transform: rotate(360deg) scale(1); }
+}

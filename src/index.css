@@ -185,6 +185,7 @@ button:active {
   transform: translateX(-50%);
   width: 100vw;
   height: 50vh;
+  padding-left: 20vw;
 
   background: linear-gradient(to top, var(--sl-blue), transparent);
 

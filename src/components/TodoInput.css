@@ -35,7 +35,7 @@
 
 .add-btn {
   position: absolute;
-  right: 8px;
+  left: 80%;
   top: 50%;
   transform: translateY(-50%);
   width: 45px;
@@ -49,12 +49,12 @@
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
-}
+ }
 
 .add-btn svg {
   width: 24px;
   height: 24px;
-}
+  }
 
 .add-btn:hover {
   background: #ff0000;

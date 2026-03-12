@@ -126,6 +126,7 @@
   border-radius: 8px;
   opacity: 0.5;
   transition: all 0.3s ease;
+  padding-right: 5%;
 }
 
 .todo-item:hover .delete-btn {

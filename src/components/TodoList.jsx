@@ -12,7 +12,7 @@ function TodoList({ todos, toggleComplete, deleteTodo }) {
 
   return (
     <ul className="todo-list">
-      {todos.map((todo, index) => (
+      {todos.map((todo) => (
         <TodoItem 
           key={todo.id} 
           todo={todo} 

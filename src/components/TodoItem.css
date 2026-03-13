@@ -144,3 +144,44 @@
   box-shadow: 0 0 15px var(--dn-red);
   transform: scale(1.1) rotate(10deg);
 }
+
+@media (max-width: 600px) {
+  .todo-item {
+    padding: 0.7rem;
+  }
+  
+  .todo-text {
+    font-size: 0.95rem;
+    margin: 0 0.5rem;
+  }
+
+  .delete-btn {
+    padding: 5px;
+    padding-right: 0;
+  }
+  
+  .checkbox-container {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .checkmark {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .checkmark:after {
+    left: 6px;
+    top: 2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .todo-item {
+    padding: 0.5rem;
+  }
+  
+  .todo-text {
+    font-size: 0.9rem;
+  }
+}

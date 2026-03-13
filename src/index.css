@@ -55,7 +55,8 @@ body {
 .app-container {
   width: 100%;
   max-width: 650px;
-  margin: 0 1rem;
+  margin: 0 auto;
+  padding: 0 1rem;
   position: relative;
   z-index: 10;
 }
@@ -96,7 +97,7 @@ body {
   padding: 0 15px;
 
   font-family: 'Shojumaru', cursive;
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 4px;
 
   text-shadow: 0 0 10px var(--jk-purple);
@@ -185,7 +186,6 @@ button:active {
   transform: translateX(-50%);
   width: 100vw;
   height: 50vh;
-  padding-left: 20vw;
 
   background: linear-gradient(to top, var(--sl-blue), transparent);
 
@@ -248,23 +248,46 @@ button:active {
 }
 /* ================= MOBILE FIX ================= */
 
-@media(max-width:480px){
-
-  body{
-    padding:14px 8px;
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 0.5rem;
   }
 
-  .glass-panel{
-    padding:16px;
+  .glass-panel {
+    padding: 1.5rem 1rem;
+    overflow: visible; /* Ensure label is not clipped */
   }
 
-  .todo-input-container{
-    gap:8px;
+  h1.title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
-  .add-btn{
-    min-width:40px;
-    height:40px;
+  .glass-panel::before {
+    font-size: 0.7rem;
+    padding: 0 10px;
+    top: -10px;
+    white-space: nowrap;
+    max-width: 90%;
+  }
+}
+
+/* Specific narrow mobile optimization (Oppo A78 / 360px) */
+@media (max-width: 380px) {
+  .glass-panel {
+    padding: 1.2rem 0.8rem;
   }
 
+  h1.title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .glass-panel::before {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+  }
 }
